@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -17,6 +18,33 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
+  ],
+  /*
+  router: {
+    middleware: ['auth']
+  },
+  */
+  auth: {
+    redirect: {
+      callback: '/callback'
+    },
+    strategies: {
+      social: {
+        _scheme: 'oauth2',
+        authorization_endpoint: 'https://gitlab.com/oauth/authorize',
+        //userinfo_endpoint: 'https://gitlab.com/oauth/userinfo',
+        scope: ['openid', 'read_user', 'api'],
+        response_type: 'token',
+        token_type: 'Bearer',
+        redirect_uri: 'http://localhost:3000/callback',
+        client_id: '7cb14d2a3bda216b641c5879dccf28ace0ae4153e1f3e1724fe4eab1c5023ab7',
+        token_key:  'access_token'
+      }
+    }
+  },
   /*
   ** Build configuration
   */
