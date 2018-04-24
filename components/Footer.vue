@@ -1,10 +1,5 @@
 <template>
   <div>
+    <button>Logout</button>
   </div>
 </template>
-
-<script>
-</script>
-
-<style>
-</style>
