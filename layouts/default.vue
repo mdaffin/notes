@@ -24,6 +24,25 @@ export default {
 </script>
 
 <style>
+html, body {
+  padding: 0;
+  margin: 0;
+  --accent-color: #3eaf7c;
+  --text-color: #2c3e50;
+  --border-color: #eaecef;
+  --code-bg-color: #282c34;
+  --arrow-bg-color: #ccc;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  color: var(--text-color);
+
+}
+
 .app {
   display: grid;
   min-height: 100vh;
