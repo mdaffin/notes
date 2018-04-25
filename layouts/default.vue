@@ -26,7 +26,6 @@ export default {
   mounted() {
     console.log("Mounted")
 
-
     NetlifyIdentity.init({})
 
     let user = NetlifyIdentity.currentUser();
@@ -45,6 +44,9 @@ export default {
     NetlifyIdentity.on("error", err => console.error("Logged out"));
     NetlifyIdentity.on("open", () => console.log("Widget opened"));
     NetlifyIdentity.on("close", () => console.log("Widget closed"));
+
+    //https://gitlab.com/oauth/authorize?client_id=""&redirect_uri=REDIRECT_URI&response_type=code&state=YOUR_UNIQUE_STATE_HASH
+
   },
 }
 </script>

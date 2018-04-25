@@ -15,6 +15,7 @@
   "dependencies": {
     "@nuxtjs/auth": "^4.2.0",
     "@nuxtjs/axios": "^5.3.1",
+    "netlify-auth-providers": "^1.0.0-alpha5",
     "netlify-identity-widget": "^1.4.11",
     "nuxt": "^1.0.0"
   },
