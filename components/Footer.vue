@@ -1,5 +1,6 @@
 <template>
   <div>
-    <button>Logout</button>
+    <nuxt-link to="/logout">logout</nuxt-link>
+    <nuxt-link to="/login">login</nuxt-link>
   </div>
 </template>

@@ -40,7 +40,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   color: var(--text-color);
-
 }
 
 .app {
