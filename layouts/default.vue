@@ -3,6 +3,8 @@
     <Header/>
     <SideBar/>
     <main>
+      <div data-netlify-identity-menu></div>
+      <div data-netlify-identity-button>Sign up / Log in</div>
       <nuxt/>
     </main>
     <Footer/>
@@ -10,6 +12,7 @@
 </template>
 
 <script>
+import NetlifyIdentity from 'netlify-identity-widget'
 import Header from '~/components/Header.vue'
 import SideBar from '~/components/SideBar.vue'
 import Footer from '~/components/Footer.vue'
@@ -19,7 +22,19 @@ export default {
     Header,
     SideBar,
     Footer,
-  }
+  },
+  mounted() {
+    console.log("Mounted")
+    NetlifyIdentity.init({})
+    NetlifyIdentity.open()
+
+    NetlifyIdentity.on("init", user => console.log(user));
+    NetlifyIdentity.on("login", login => console.log(user));
+    NetlifyIdentity.on("logout", () => console.log("Logged out"));
+    NetlifyIdentity.on("error", err => console.error("Logged out"));
+    NetlifyIdentity.on("open", () => console.log("Widget opened"));
+    NetlifyIdentity.on("close", () => console.log("Widget closed"));
+  },
 }
 </script>
 

@@ -1,8 +1,7 @@
 <template>
   <aside>
-    <div><a href="#">Folder 1</a></div>
-    <div><a href="#">Folder 2</a></div>
-    <div><a href="#">Folder 3</a></div>
+    <div><nuxt-link to="/login">Login</nuxt-link></div>
+    <div><nuxt-link to="/secure">Secure</nuxt-link></div>
   </aside> 
 </template>
 

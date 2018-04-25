@@ -35,7 +35,7 @@ module.exports = {
       social: {
         _scheme: 'oauth2',
         authorization_endpoint: 'https://gitlab.com/oauth/authorize',
-        //userinfo_endpoint: 'https://www.googleapis.com/oauth2/v3/userinfo',
+        //userinfo_endpoint: 'https://gitlab.com/oauth/userinfo',
         scope: ['openid', 'read_user', 'api'],
         response_type: 'token',
         token_type: 'Bearer',
