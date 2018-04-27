@@ -2,7 +2,8 @@
   <div>
     <h1>Hello</h1>
     <pre>
-    {{ $auth.state.user.name }}
+    Token: {{ $auth.getToken('gitlab') }}
+    State: {{ $auth.state }}
     </pre>
   </div>
 </template>
