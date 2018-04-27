@@ -2,9 +2,8 @@
   <div class="app">
     <Header/>
     <SideBar/>
+    <Controls/>
     <main>
-      <div data-netlify-identity-menu></div>
-      <div data-netlify-identity-button>Sign up / Log in</div>
       <nuxt/>
     </main>
     <Footer/>
@@ -12,41 +11,17 @@
 </template>
 
 <script>
-import NetlifyIdentity from 'netlify-identity-widget'
 import Header from '~/components/Header.vue'
 import SideBar from '~/components/SideBar.vue'
+import Controls from '~/components/Controls.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
     Header,
     SideBar,
+    Controls,
     Footer,
-  },
-  mounted() {
-    console.log("Mounted")
-
-    NetlifyIdentity.init({})
-
-    let user = NetlifyIdentity.currentUser();
-    console.log("User:")
-    console.log(user)
-
-    NetlifyIdentity.open()
-
-    user = NetlifyIdentity.currentUser();
-    console.log("User:")
-    console.log(user)
-
-    NetlifyIdentity.on("init", user => console.log(user));
-    NetlifyIdentity.on("login", login => console.log(user));
-    NetlifyIdentity.on("logout", () => console.log("Logged out"));
-    NetlifyIdentity.on("error", err => console.error("Logged out"));
-    NetlifyIdentity.on("open", () => console.log("Widget opened"));
-    NetlifyIdentity.on("close", () => console.log("Widget closed"));
-
-    //https://gitlab.com/oauth/authorize?client_id=""&redirect_uri=REDIRECT_URI&response_type=code&state=YOUR_UNIQUE_STATE_HASH
-
   },
 }
 </script>
@@ -75,11 +50,12 @@ body {
   min-height: 100vh;
   grid-gap: 8px;
   grid-template-columns: 300px 1fr;
-  grid-template-rows: 128px 1fr 64px;
+  grid-template-rows: 128px 1fr 48px 48px;
   grid-template-areas:
-    "header  content"
-    "sidebar content"
-    "footer  content";
+    "header   content"
+    "sidebar  content"
+    "controls content"
+    "footer   content";
 }
 
 header {
@@ -94,9 +70,11 @@ footer {
   grid-area: footer;
 }
 
+.controls {
+  grid-area: controls;
+}
+
 main {
   grid-area: content;
 }
-
-
 </style>
