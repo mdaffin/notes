@@ -1,6 +1,8 @@
 <template>
   <div class="controls">
-    <button @click="logout">logout</button>
+    <nuxt-link to="/" @click="logout">logout</nuxt-link>
+    <nuxt-link to="/login">Login</nuxt-link>
+    <nuxt-link to="/project">Select Project</nuxt-link>
   </div>
 </template>
 
@@ -13,3 +15,13 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+a {
+  display: inline;
+  color: var(--accent-color);
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 8px;
+}
+</style>

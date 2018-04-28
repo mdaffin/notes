@@ -4,7 +4,7 @@
     <pre>
     Token: {{ $auth.getToken('gitlab') }}
     State: {{ $auth.$state }}
-    Repo: {{ $store.state.repo }}
+    Project: {{ $store.state.project }}
     </pre>
   </div>
 </template>

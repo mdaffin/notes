@@ -47,10 +47,10 @@ body {
 
 .app {
   display: grid;
-  min-height: 100vh;
+  height: 100vh;
   grid-gap: 8px;
-  grid-template-columns: 300px 1fr;
-  grid-template-rows: 128px 1fr 48px 48px;
+  grid-template-columns: 272px 1fr;
+  grid-template-rows: 80px 1fr 38px 32px;
   grid-template-areas:
     "header   content"
     "sidebar  content"
@@ -64,17 +64,25 @@ header {
   
 aside {
   grid-area: sidebar;
+  overflow: auto;
 }
 
 footer {
   grid-area: footer;
+  align-self: center;
 }
 
 .controls {
   grid-area: controls;
+  align-self: center;
+}
+
+.controls > a {
+  margin-right: 8px;
 }
 
 main {
   grid-area: content;
+  overflow: auto;
 }
 </style>
