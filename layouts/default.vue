@@ -93,7 +93,7 @@ footer {
 main {
   grid-area: content;
   overflow: auto;
-  max-width: 45em;
+  max-width: 100%;
   padding: 16px;
   justify-self: center;
 }
