@@ -7,6 +7,7 @@
       <nuxt/>
     </main>
     <Footer/>
+    <div class="sidebar"></div>
   </div>
 </template>
 
@@ -49,7 +50,7 @@ body {
   display: grid;
   height: 100vh;
   grid-gap: 8px;
-  grid-template-columns: 272px 1fr;
+  grid-template-columns: 208px 1fr;
   grid-template-rows: 80px 1fr 38px 32px;
   grid-template-areas:
     "header   content"
@@ -81,8 +82,19 @@ footer {
   margin-right: 8px;
 }
 
+.sidebar {
+  grid-column-start: header;
+  grid-row-start: header;
+  grid-row-end: footer;
+  border-right: 1px solid var(--border-color);
+  z-index: -1;
+}
+
 main {
   grid-area: content;
   overflow: auto;
+  max-width: 45em;
+  padding: 16px;
+  justify-self: center;
 }
 </style>
