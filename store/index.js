@@ -55,7 +55,6 @@ export const state = () => {
 
 export const mutations = {
   setProject(state, project) {
-    console.log(this.$auth.state)
     localStorage.setItem('project', project)
     state.project = project
   },

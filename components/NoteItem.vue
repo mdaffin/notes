@@ -24,7 +24,7 @@ export default {
   name: 'NoteItem',
   computed: {
     to() {
-      return `/notes/${this.path}`
+      return `#/${this.path}`
     }
   },
 }
