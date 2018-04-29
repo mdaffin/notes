@@ -1,7 +1,7 @@
 <template>
   <div class="controls">
-    <nuxt-link to="/" @click="logout">logout</nuxt-link>
-    <nuxt-link to="/login">Login</nuxt-link>
+    <nuxt-link v-if="$auth.loggedIn" to="/" @click="logout">Logout</nuxt-link>
+    <nuxt-link v-if="!$auth.loggedIn" to="/login">Login</nuxt-link>
     <nuxt-link to="/project">Select Project</nuxt-link>
   </div>
 </template>
