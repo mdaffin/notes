@@ -1,9 +1,10 @@
 <template>
   <div class="item">
-    {{ name }}
+    <nuxt-link :to="to">{{ name }}</nuxt-link>
     <NoteItem
       v-for="note in sub"
       :key="note.id"
+      :path="note.path"
       :name="note.name"
       :sub="note.sub"
       :depth="parseInt(depth) + 1"
@@ -14,11 +15,18 @@
 <script>
 export default {
   props: [
+    'project',
     'name',
+    'path',
     'sub',
     'depth',
   ],
   name: 'NoteItem',
+  computed: {
+    to() {
+      return `/notes/${this.path}`
+    }
+  },
 }
 </script>
 
